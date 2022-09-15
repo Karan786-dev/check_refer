@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Check Refer</title>
+
+  <style media="all">
+
+    @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+
+    .list2 {
+
+      margin-left: 10%;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="section">
+
+    <div class="column is-centered is-5 box">
+
+      <%for (i in data) {
+
+        %>
+
+        <%let camp_data = data[i]%>
+
+        <%for (x in camp_data.events) {
+
+          %>
+
+          <%let event_data = camp_data.events[x]%>
+
+          <%if ((number in event_data.refers)) {
+
+            %>
+
+            <%console.log(event_data.refers)%>
+
+            <%let arr = event_data.refers[number]%>
+
+            <div class="box">
+
+              <div class="box">
+
+                <div class="list">
+
+                  <ol>
+
+                    <p class="title is-5 has-text-centered">
+
+                      <%=event_data.offer_name%> || <%=event_data.name%>
+
+                    </p>
+
+                    <%for (v in arr) {
+
+                      %>
+
+                      <%let n = arr[v]%>
+
+                      <div class="list-item list2">
+
+                        <li><%=n%></li>
+
+                      </div>
+
+                      <%}%>
+
+                      </ol>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <%}%>
+
+                  <%}%>
+
+                    <%}%>
+
+                    </div>
+
+                  </section>
+
+                </body>
+
+              </html>
